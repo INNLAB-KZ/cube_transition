@@ -146,7 +146,7 @@ class CubeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final isLeaving = (index - pageNotifier) <= 0;
     final t = (index - pageNotifier);
-    final rotationY = lerpDouble(0, 90, t);
+    final rotationY = lerpDouble(0, 65, t);
     final opacity = lerpDouble(0, 1, t.abs()).clamp(0.0, 1.0);
     final transform = Matrix4.identity();
     transform.setEntry(3, 2, 0.003);
@@ -154,7 +154,10 @@ class CubeWidget extends StatelessWidget {
     return Transform(
       alignment: isLeaving ? Alignment.centerRight : Alignment.centerLeft,
       transform: transform,
-      child: child,
+      child: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        child: child
+      ),
     );
   }
 }
