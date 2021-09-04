@@ -154,21 +154,7 @@ class CubeWidget extends StatelessWidget {
     return Transform(
       alignment: isLeaving ? Alignment.centerRight : Alignment.centerLeft,
       transform: transform,
-      child: Stack(
-        children: [
-          child,
-          Positioned.fill(
-            child: Opacity(
-              opacity: opacity,
-              child: Container(
-                child: Container(
-                  color: Colors.black87,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+      child: child,
     );
   }
 }

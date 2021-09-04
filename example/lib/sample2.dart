@@ -1,4 +1,5 @@
 import 'package:cube_transition/cube_transition.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'data.dart';
 
@@ -43,6 +44,7 @@ class Sample2 extends StatelessWidget {
                           ),
                         ),
                       ),
+                      CupertinoButton(color: Colors.red, onPressed: ()  {print('zzz');},child: Container(height: 100, width: MediaQuery.of(context).size.width,))
                     ],
                   ),
                 )
